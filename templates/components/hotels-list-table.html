@@ -1,0 +1,56 @@
+      <div id="hotels-table-wrap" ng-controller="hotelsTableList">
+        <table st-safe-src="hotelsRowCollection" st-table="hotelsDisplayCollection" class="table table-striped">
+            <thead>
+                <tr>
+                    <th>
+                        <input st-search="name" placeholder="search for hotel" class="input-sm form-control" type="search"/>
+                    </th>
+                    <th colspan="3">
+                    </th>                    
+                    <th>
+                        <select st-search="details.brand.val" >
+                            <option value="">All</option>
+                            <option ng-repeat="brand in brands" value="{{brand.val}}">{{brand.txt}}</option>
+                        </select>
+                    </th>
+                </tr>            
+                <tr>
+                    <th st-sort="hotelName">Hotel Name</th>
+                    <th>City</th>
+                    <th>Country</th>
+                    <th>Star Rating</th>
+                    <th>Brand</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr st-select-row="row" ng-repeat="row in hotelsDisplayCollection">
+                    <td>{{row.name}}</td>
+                    <td>{{row.address.city}}</td>
+                    <td>{{row.address.country}}</td>
+                    <td>
+                    <span class="rating-stars rating-val-{{row.details.starRating.val}}"></span>
+                    </td>                    
+                    <td>{{row.details.brand.txt}}</td>
+                    <td>
+                      <a href="#/hotel-details/{{row.sorted_id}}" >
+                        <span class="glyphicon glyphicon-search row-details-btn hvr-pulse"></span>
+                      </a>                       
+                    </td>                     
+                    <td>                    
+                      <button type="button" ng-click="removeRow(row)" class="btn btn-sm btn-danger">
+                        <i class="glyphicon glyphicon-remove-circle">
+                        </i>
+                      </button>
+                                        
+                    </td>                   
+                </tr>
+            </tbody>
+            <tfoot>
+              <tr>
+                <td colspan="7" class="text-center">
+                  <div st-pagination="" st-items-by-page="5"></div>
+                </td>
+              </tr>
+            </tfoot>            
+        </table>      
+      </div>

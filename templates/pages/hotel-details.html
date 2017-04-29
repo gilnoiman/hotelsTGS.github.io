@@ -1,0 +1,131 @@
+<div class="container">
+    <h1 class="text-center">Edit Hotel</h1>
+	<div ng-show="wrongMsg" class="alert alert-danger text-center" role="alert">
+	  <strong>Oh snap!</strong> <a href="#/hotels-list" class="alert-link">Go Back</a> something went wrong.
+	</div>    
+  	<hr>
+	<div ng-if="showDetails" class="row">
+      <!-- left column -->
+      <div class="col-md-3">
+        <div class="text-center">
+          <img src="{{hotel.images[0].url}}" class="avatar hotel-img" alt="avatar">
+        </div>
+      </div>
+      
+      <!-- edit form column -->
+      <div class="col-md-9 personal-info">
+        <div class="alert alert-info alert-dismissable">
+          <a class="panel-close close" data-dismiss="alert">×</a> 
+          Editing <strong>TGS</strong> hotels is fun, please make sure you enjoy it.
+        </div>      
+        <div class="alert alert-success alert-dismissable collapse" id="alert-saving-success">
+          <a class="panel-close close" data-dismiss="alert">×</a> 
+          Changes have been saved.
+        </div>
+        <h3>Personal info</h3>
+
+        <form class="form-horizontal" role="form">
+          <div class="form-group">
+            <label class="col-lg-3 control-label">Hotel name:</label>
+            <div class="col-lg-8">
+              <input class="form-control" type="text" value="{{hotel.name}}">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-lg-3 control-label">City:</label>
+            <div class="col-lg-8">
+              <input class="form-control" type="text" value="{{hotel.address.city}}">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-lg-3 control-label">Address:</label>
+            <div class="col-lg-8">
+              <input class="form-control" type="text" value="{{hotel.address.address}}">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-lg-3 control-label">Country:</label>
+            <div class="col-lg-8">
+              <input class="form-control" type="text" value="{{hotel.address.country}}">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-lg-3 control-label">Star Rating:</label>
+            <div class="col-lg-8">
+              <div class="ui-select">
+                <select  ng-model="hotel.details.starRating.val" id="srar-rating" class="form-control" ng-options="s.val as s.val for s in starRatingOptions">
+                </select>
+              </div>
+            </div>
+          </div>          
+          <div class="form-group">
+            <label class="col-lg-3 control-label">Brand:</label>
+            <div class="col-lg-8">
+              <div class="ui-select">
+                <select  ng-model="hotel.details.brand.val" id="hotel-brand" class="form-control" ng-options="b.val as b.txt for b in brands">
+                </select>
+              </div>
+            </div>
+          </div>          
+          <div class="form-group">
+            <label class="col-lg-3 control-label">Currency:</label>
+            <div class="col-lg-8">
+              <input class="form-control" type="text" value="{{hotel.details.currency}}">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-lg-3 control-label">Check In:</label>
+            <div class="col-lg-8">
+              <input class="form-control" type="text" value="{{hotel.details.checkIn}}">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-lg-3 control-label">Check Out:</label>
+            <div class="col-lg-8">
+              <input class="form-control" type="text" value="{{hotel.details.checkOut}}">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-lg-3 control-label">Num Of Rooms:</label>
+            <div class="col-lg-8">
+              <input class="form-control" type="text" value="{{hotel.details.numOfRooms}}">
+            </div>
+          </div>                                                            
+          <div class="form-group">
+            <label class="col-lg-3 control-label">Amenities:</label>
+            <div class="col-lg-8">
+              <div class="ui-select">
+			     <div class="button-group">
+			        <button type="button" class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-cog"></span> <span class="caret"></span></button>
+					<ul class="dropdown-menu">
+					  <li ng-repeat="amenitie in hotel.amenities"><a class="small" data-value="{{amenitie.val}}" tabIndex="-1"><input type="checkbox" checked="true" disabled="true" />&nbsp;{{amenitie.txt}}</a></li>
+					</ul>
+			  	</div>
+              </div>
+            </div>
+          </div>          
+          <div class="form-group">
+            <label class="col-md-3 control-label">Description:</label>
+            <div class="col-md-8">
+              <input class="form-control" type="text" value="{{hotel.description}}">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-md-3 control-label">Img URL:</label>
+            <div class="col-md-8">
+              <input class="form-control" type="text" value="{{hotel.images[0].url}}">
+            </div>
+          </div>          
+          <div class="form-group">
+            <label class="col-md-3 control-label"></label>
+            <div class="col-md-8">
+              <input type="button" class="btn btn-primary" value="Save Changes" ng-click="saveChanges()">
+              <span></span>
+              <a class="btn btn-default" href="#/hotels-list" role="button">Go Back</a>
+            </div>
+          </div>
+        </form>
+      </div>
+  </div>
+</div>
+<hr>

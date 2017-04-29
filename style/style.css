@@ -1,0 +1,172 @@
+body{
+  background-color: #eceeff !important;
+}
+
+#hotels-recently-visited-wrap{
+    opacity: 0.75;
+    max-width: 993px;
+    margin: 0 auto;
+}
+
+.separator{
+  width:100%;
+  display: block;
+  border: 1px solid rgba(226, 214, 169, 0.52);
+}
+
+.brands-dropdown{
+   margin: 5px 5px 5px 0px;
+   width: 120px;
+   height: 34px;
+   border: none;
+   border-radius: 5px;
+   overflow: hidden;
+  
+}
+
+.brands-dropdown select option{
+  color:black;
+}
+
+
+/*marking the selected row view in a blue color*/
+.st-selected td {
+    background: #a7e2f4 !important;
+}
+
+
+#hotels-table-wrap{
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/*hiding and showing the details btn in case a row was clicked*/
+.row-details-btn{
+  display: none !important;
+  float: right;
+  margin-top: 7px;  
+  color:rgba(146, 55, 55, 0.86);
+}
+
+.st-selected .row-details-btn{
+  display: inline-block !important;
+}
+
+
+
+/* Pulse effect for the details btn */
+@-webkit-keyframes hvr-pulse {
+  25% {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+  }
+  75% {
+    -webkit-transform: scale(0.9);
+    transform: scale(0.9);
+  }
+}
+@keyframes hvr-pulse {
+  25% {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+  }
+  75% {
+    -webkit-transform: scale(0.9);
+    transform: scale(0.9);
+  }
+}
+.hvr-pulse {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px transparent;
+}
+.hvr-pulse{
+  -webkit-animation-name: hvr-pulse;
+  animation-name: hvr-pulse;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-timing-function: linear;
+  animation-timing-function: linear;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+}
+
+/**/
+
+
+  .hotel-img{
+    box-shadow: 8px 8px 10px #aaa;
+    border: 15px solid #3e2b14;
+      padding: 10px;
+      max-width: 263px;
+      width: 263px;
+  }
+
+
+
+/*rating stars*/
+.rating-stars{
+    display: block;
+    width: 95px;
+    height: 14px;
+    background-size: 100%;
+    background-color: transparent; 
+    margin-top: 7px; 
+}
+
+/*0 stars*/
+[class~="rating-val-0"]{
+  background: url('/images/stars.png') 0 0px;
+}
+
+/*0.5 stars*/
+[class~="rating-val-0.5"]{
+  background: url('/images/stars.png') 0 -24px;
+}
+
+/*1 stars*/
+[class~="rating-val-1"]{
+  background: url('/images/stars.png') 0 -45px;
+}
+
+/*1.5 stars*/
+[class~="rating-val-1.5"]{
+  background: url('/images/stars.png') 0 -66px;
+}
+
+/*2 stars*/
+[class~="rating-val-2"]{
+  background: url('/images/stars.png') 0 -88px;
+}
+
+/*2.5 stars*/
+[class~="rating-val-2.5"]{
+  background: url('/images/stars.png') 0 -111px;
+}
+
+/*3 stars*/
+[class~="rating-val-3"]{
+  background: url('/images/stars.png') 0 -133px;
+}
+
+/*3.5 stars*/
+[class~="rating-val-3.5"]{
+  background: url('/images/stars.png') 0 -155px;
+}
+
+/*4 stars*/
+[class~="rating-val-4"]{
+  background: url('/images/stars.png') 0 -177px;
+}
+
+/*4.5 stars*/
+[class~="rating-val-4.5"]{
+  background: url('/images/stars.png') 0 -200px;
+}
+
+/*5 stars*/
+[class~="rating-val-5"]{
+  background: url('/images/stars.png') 0 -222px;
+}

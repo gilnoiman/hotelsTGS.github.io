@@ -1,0 +1,46 @@
+<div id="wrap-all">
+<!-- hotels list table -->
+  <hotels-list-table></hotels-list-table>
+
+  <div class=separator></div>
+    <!-- Last Visited -->
+  <div ng-if="oldviews.length>0" id="hotels-recently-visited-wrap">
+    <h2>recently visited:</h2>
+    <table st-safe-src="oldviews" st-table="oldviewsDisplayCollection" class="table table-striped">
+        <thead>           
+            <tr>
+                <th st-sort="hotelName">Hotel Name</th>
+                <th>City</th>
+                <th>Country</th>
+                <th>Star Rating</th>
+                <th>Brand</th>
+                <th>date</th>
+                <th>time</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="row in oldviewsDisplayCollection">
+                <td>{{row.name}}</td>
+                <td>{{row.city}}</td>
+                <td>{{row.country}}</td>
+                <td>
+                <span class="rating-stars rating-val-{{row.starRating.val}}"></span>
+                </td>                    
+                <td>{{row.brand.txt}}</td>
+                <td>{{row.date | date:'yyyy-MM-dd'}}</td>
+                <td>{{row.time | date:'hh:mm:ss'}}</td>                    
+            </tr>
+        </tbody>
+        <tfoot>
+          <tr>
+            <td colspan="7" class="text-center">
+              <div st-pagination="" st-items-by-page="3"></div>
+            </td>
+          </tr>
+        </tfoot>           
+    </table>     
+
+  </div>
+  <h1>
+</div>
+
